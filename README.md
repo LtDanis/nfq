@@ -1,2 +1,6 @@
-Danielius Stra≈°unskis
-# nfq
+Danielius Straöunskis
+nfq
+my_project
+==========
+
+A Symfony project created on February 12, 2016, 5:14 pm.
