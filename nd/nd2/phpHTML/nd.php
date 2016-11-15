@@ -2,6 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "admin";
+	$dnbname = "nd";
 
 
 	try {
