@@ -143,7 +143,7 @@ class Book {
       echo "Connection failed: " . $e->getMessage();
     }
 
-    $stmt = $connection->prepare('SELECT Books.*, GROUP_CONCAT(Authors.name) AS authors FROM Books
+    $stmt = $conn->prepare('SELECT Books.*, GROUP_CONCAT(Authors.name) AS authors FROM Books
         LEFT JOIN  Written_books ON Books.bookId =  Written_books.bookId
         LEFT JOIN Authors ON  Authors.authorId= Written_books.authorId
         GROUP BY Books.title;');
