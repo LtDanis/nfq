@@ -50,7 +50,7 @@ class BooksRepository {
 
   public function findAllBooks()
   {
-    $stmt = $this->connection->prepare('SELECT Books.*, GROUP_CONCAT(Authors.name) AS authors FROM Books
+    $stmt = $this->conn->prepare('SELECT Books.*, GROUP_CONCAT(Authors.name) AS authors FROM Books
         LEFT JOIN Written_books ON Books.bookId = Written_books.bookId
         LEFT JOIN Authors ON  Authors.authorId=Written_books.authorId
         GROUP BY Books.title;');
