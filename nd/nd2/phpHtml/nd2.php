@@ -14,10 +14,12 @@
 	    echo "Connection failed: " . $e->getMessage();
 	    }
 
-	$sql = 'SELECT * FROM Books';
+	$currentBookId=$_GET['id'];
+
+	$sql = "SELECT * FROM Books WHERE Books.bookId=$currentBookId";
 	    foreach ($conn->query($sql) as $row) {
-		echo "<a href='./nd2.php/?id={$row['bookId']}'>";
-		print $row['title'] . "<br/>";
-		print "</a>";
+		print $row['bookId'] . "\t";
+		print $row['title'] . "\t";
+		print $row['year'] . "<br/>";
 	    }
 ?>

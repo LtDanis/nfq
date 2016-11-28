@@ -2,6 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "admin";
+	$dnbname = "nd";
 
 
 	try {
@@ -14,12 +15,10 @@
 	    echo "Connection failed: " . $e->getMessage();
 	    }
 
-	$currentBookId=$_GET['id'];
-	$sql = "SELECT * FROM Books WHERE Books.bookId=$currentBookId";
+	$sql = 'SELECT * FROM Books';
 	    foreach ($conn->query($sql) as $row) {
-		print $row['bookId'] . "\t";
-		print $row['title'] . "\t";
-		print $row['year'] . "<br/>";
+		echo "<a href='./nd2.php/?id={$row['bookId']}'>";
+		print $row['title'] . "<br/>";
+		print "</a>";
 	    }
-	echo '<a href="../nd.php">Back</a>';
 ?>
